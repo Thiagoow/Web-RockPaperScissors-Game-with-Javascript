@@ -33,15 +33,15 @@ function computerChoice() {
 
 //Verifica qual escolha o usuário fez:
 function clicked() {
-  rockDiv.addEventListener("click", function () {
+  rockDiv.addEventListener("click", () => {
     game("r");
   });
 
-  paperDiv.addEventListener("click", function () {
+  paperDiv.addEventListener("click", () => {
     game("p");
   });
 
-  scissorDiv.addEventListener("click", function () {
+  scissorDiv.addEventListener("click", () => {
     game("s");
   });
 }
@@ -97,7 +97,7 @@ function resWin(user, comp) {
   dá um efeito na borda: */
   userChoice.classList.add("winEffect");
   //Tira a classe de efeito na borda:
-  setTimeout(function () {
+  setTimeout(() => {
     userChoice.classList.remove("winEffect");
   }, 700);
 }
@@ -122,7 +122,7 @@ function resLose(user, comp) {
   dá um efeito na borda: */
   userChoice.classList.add("loseEffect");
   /*Tira a classe de efeito na borda:*/
-  setTimeout(function () {
+  setTimeout(() => {
     userChoice.classList.remove("loseEffect");
   }, 700);
 }
@@ -141,7 +141,7 @@ function resDraw(user, comp) {
   dá um efeito na borda: */
   userChoice.classList.add("drawEffect");
   //Tira a classe de efeito na borda
-  setTimeout(function () {
+  setTimeout(() => {
     userChoice.classList.remove("drawEffect");
   }, 700);
 }
