@@ -112,3 +112,13 @@ pelo Js, se o usuário vence ou perde: */
   border: 4px solid rgb(0, 17, 255);
   box-shadow: 0 0 10px rgb(0, 17, 255);
 }
+
+/*Deixa o texto em 2 linhas quando a largura
+da tela do dispositivo for < 480. Pra deixar
+responsivo: */
+@media (max-width: 480px) {
+  .result {
+    display: grid;
+    place-items: center;
+  }
+}
