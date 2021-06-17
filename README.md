@@ -10,4 +10,4 @@ tendo como base o <a href="https://www.youtube.com/watch?v=jaVNP3nIAv0" target="
 do canal do Youtube: <a href="https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ" target="_blank">
 freeCodeCamp.org</a></p>
 
-## Demo: https://glassmorphic-credit-card-ui.netlify.app/
+## Demo: https://rockpaperscissors-js-game.netlify.app/
