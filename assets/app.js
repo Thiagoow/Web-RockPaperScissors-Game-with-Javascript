@@ -8,7 +8,7 @@ let compScore = 0;
 const userScoreSpan = document.getElementById("userScore");
 const compScoreSpan = document.getElementById("computerScore");
 
-//
+//Selecionando as divs do HTML pra exibir o resultado em texto:
 const scoreBoardDiv = document.querySelector(".scoreBoard");
 const resultP = document.querySelector(".result p");
 const resultB = document.querySelector(".result b");
@@ -88,8 +88,18 @@ function resWin(user, comp) {
     comp
   )}! Você`;
   resultB.innerHTML = " VENCEU! 🤩😎";
-  //Deixa a cor da tag b:
+  //Muda a cor da tag b:
   resultB.style.color = "rgb(9, 255, 0)";
+
+  //Var que guarda a escolha do usuário:
+  const userChoice = document.getElementById(user);
+  /* Atribui à escolha do user a classe que 
+  dá um efeito na borda: */
+  userChoice.classList.add("winEffect");
+  //Tira a classe de efeito na borda:
+  setTimeout(function () {
+    userChoice.classList.remove("winEffect");
+  }, 700);
 }
 
 //Se o usuário perder:
@@ -103,8 +113,18 @@ function resLose(user, comp) {
     comp
   )}! Você`;
   resultB.innerHTML = " PERDEU! 🥺😥";
-  //Deixa a cor da tag b:
+  //Muda a cor da tag b:
   resultB.style.color = "rgb(255, 0, 0)";
+
+  //Var que guarda a escolha do usuário:
+  const userChoice = document.getElementById(user);
+  /* Atribui à escolha do user a classe que 
+  dá um efeito na borda: */
+  userChoice.classList.add("loseEffect");
+  /*Tira a classe de efeito na borda:*/
+  setTimeout(function () {
+    userChoice.classList.remove("loseEffect");
+  }, 700);
 }
 
 //Se der empate:
@@ -112,6 +132,16 @@ function resDraw(user, comp) {
   //Atualiza o HTML com os res:
   resultP.innerHTML = `${convert2Word(user)} = ${convert2Word(comp)}! Vocês`;
   resultB.innerHTML = " EMPATARAM 😱 ";
-  //Deixa a cor da tag b:
+  //Muda a cor da tag b:
   resultB.style.color = "rgb(0, 17, 255)";
+
+  //Var que guarda a escolha do usuário:
+  const userChoice = document.getElementById(user);
+  /* Atribui à escolha do user a classe que 
+  dá um efeito na borda: */
+  userChoice.classList.add("drawEffect");
+  //Tira a classe de efeito na borda
+  setTimeout(function () {
+    userChoice.classList.remove("drawEffect");
+  }, 700);
 }
