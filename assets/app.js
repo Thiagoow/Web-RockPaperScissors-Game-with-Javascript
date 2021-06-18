@@ -9,7 +9,6 @@ const userScoreSpan = document.getElementById("userScore");
 const compScoreSpan = document.getElementById("computerScore");
 
 //Selecionando as divs do HTML pra exibir o resultado em texto:
-const scoreBoardDiv = document.querySelector(".scoreBoard");
 const resultP = document.querySelector(".result p");
 const resultB = document.querySelector(".result b");
 
@@ -100,6 +99,24 @@ function resWin(user, comp) {
   setTimeout(() => {
     userChoice.classList.remove("winEffect");
   }, 700);
+
+  //Sistema de vitória ou derrota:
+  if (userScore > 9 || compScore > 9) {
+    //Muda o texto e dá o alerta no navegador:
+    if (userScore > compScore) {
+      resultP.innerHTML = "YOU";
+      resultB.innerHTML = " WIN 🤩🤩😎";
+      resultB.style.color = "rgb(9, 255, 0)";
+      alert("Você venceu! 🤩😎 PARABÉNS!!!");
+    } else {
+      resultP.innerHTML = "YOU";
+      resultB.innerHTML = " LOSE 🥺😕";
+      resultB.style.color = "rgb(255, 0, 0)";
+      alert("CPU venceu! 😭🥺 TENTE NOVAMENTE");
+    }
+    //Executa a função que reseta os pontos do user e do pc:
+    resetPoints();
+  }
 }
 
 //Se o usuário perder:
@@ -109,8 +126,8 @@ function resLose(user, comp) {
   //Exibe na div do html os pontos da CPU:
   compScoreSpan.innerHTML = compScore;
   //Atualiza o HTML com os res:
-  resultP.innerHTML = `${convert2Word(user)} ganha de ${convert2Word(
-    comp
+  resultP.innerHTML = `${convert2Word(comp)} ganha de ${convert2Word(
+    user
   )}! Você`;
   resultB.innerHTML = " PERDEU! 🥺😥";
   //Muda a cor da tag b:
@@ -125,13 +142,31 @@ function resLose(user, comp) {
   setTimeout(() => {
     userChoice.classList.remove("loseEffect");
   }, 700);
+
+  //Sistema de vitória ou derrota:
+  if (userScore > 9 || compScore > 9) {
+    //Muda o texto e dá o alerta no navegador:
+    if (userScore > compScore) {
+      resultP.innerHTML = "YOU";
+      resultB.innerHTML = " WIN 🤩🤩😎";
+      resultB.style.color = "rgb(9, 255, 0)";
+      alert("Você venceu! 🤩😎 PARABÉNS!!!");
+    } else {
+      resultP.innerHTML = "YOU";
+      resultB.innerHTML = " LOSE 🥺😕";
+      resultB.style.color = "rgb(255, 0, 0)";
+      alert("CPU venceu! 😭🥺 TENTE NOVAMENTE");
+    }
+    //Executa a função que reseta os pontos do user e do pc:
+    resetPoints();
+  }
 }
 
 //Se der empate:
 function resDraw(user, comp) {
   //Atualiza o HTML com os res:
-  resultP.innerHTML = `${convert2Word(user)} = ${convert2Word(comp)}! Vocês`;
-  resultB.innerHTML = " EMPATARAM 😱 ";
+  resultP.innerHTML = `${convert2Word(user)} = ${convert2Word(comp)}! é um`;
+  resultB.innerHTML = " EMPATE 😱 ";
   //Muda a cor da tag b:
   resultB.style.color = "rgb(0, 17, 255)";
 
@@ -144,4 +179,32 @@ function resDraw(user, comp) {
   setTimeout(() => {
     userChoice.classList.remove("drawEffect");
   }, 700);
+
+  //Sistema de vitória ou derrota:
+  if (userScore > 9 || compScore > 9) {
+    //Muda o texto e dá o alerta no navegador:
+    if (userScore > compScore) {
+      resultP.innerHTML = "YOU";
+      resultB.innerHTML = " WIN 🤩🤩😎";
+      resultB.style.color = "rgb(9, 255, 0)";
+      alert("Você venceu! 🤩😎 PARABÉNS!!!");
+    } else {
+      resultP.innerHTML = "YOU";
+      resultB.innerHTML = " LOSE 🥺😕";
+      resultB.style.color = "rgb(255, 0, 0)";
+      alert("CPU venceu! 😭🥺 TENTE NOVAMENTE");
+    }
+    //Executa a função que reseta os pontos do user e do pc:
+    resetPoints();
+  }
+}
+
+//Reseta os pontos do user e do pc:
+function resetPoints() {
+  //Reseta a pontuação:
+  userScore = 0;
+  compScore = 0;
+  //Exibe na div do html os pontos do usuário e do pc:
+  userScoreSpan.innerHTML = userScore;
+  compScoreSpan.innerHTML = compScore;
 }
